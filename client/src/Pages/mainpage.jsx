@@ -27,10 +27,9 @@ class Mainpage extends Component {
     };
 
     submit = async (e) => {
-        e.preventDefault();
         const no = this.state.lineNumber;
         const data = await axios.post(`/count-line/${no}`);
-        console.log(data.data);
+        console.log(data.data.data);
         this.setState({ lines: data.data.data });
     };
 
