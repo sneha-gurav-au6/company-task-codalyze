@@ -7,7 +7,7 @@ const path = require("path");
 app.use(express.json());
 
 var lines = [];
-
+//getting last 10 lines by default
 app.get("/line", (req, res) => {
     console.log("started");
     fs.readFile("./test.txt", "utf8", (err, data) => {
@@ -25,6 +25,7 @@ app.get("/line", (req, res) => {
     });
 });
 
+//getting number of lines by require body
 app.post("/count-line/:no", (req, res) => {
     console.log("started");
     const number = req.params.no;
@@ -45,11 +46,11 @@ app.post("/count-line/:no", (req, res) => {
     });
 });
 
+//for editing lines
 app.post("/changingData", (req, res) => {
     const lines = [];
     const array = req.body;
     const array1 = array;
-    // console.log(array1);
 
     fs.readFile("./test.txt", "utf8", (err, data) => {
         if (err) {

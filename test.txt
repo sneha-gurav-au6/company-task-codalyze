@@ -3,13 +3,13 @@ From this article you should have learned the basics of reading files, as well a
 What's your preferred method of handling files? How have you used Streams in the past? Let us know in the comments!
 All we do here is open the file with fs.createReadStream and pipe it to the response object, res.
 can even subscribe to error events and handle those as they happen. It's a much better method to
+handling files once you learn how to properly use it. For a more complete example and explanation of the above code, check out this article on creating static file servers with Node.
+This code does exactly what the code in the first section does, except that we have to "collect" chunks
 of data before printing it out to the console. If your file is fairly small then you'll probably only ever
-ghjghj
+receive a single chunk, but for larger files, like audio and video, you'll have to collect multiple chunks.
 This is the case where you'll start to notice the real value of streaming files.
 React (also known as React.js or ReactJS) is an open-source, front end, JavaScript library[3] for building user interfaces or 
 components. It is maintained by Facebook and a community of individual developers and companies.[4][5][6] React can be used as a
 base in the development of single-page or mobile applications. However, React is only concerned with rendering data to the DOM, and
 so creating React applications usually requires the use of additional libraries for state management and routing.[7][8] Redux[9] and React
-Router[10] are respective examples of such libraries.gadhav
-okokok
-newlinenewline
+Router[10] are respective examples of such libraries.
