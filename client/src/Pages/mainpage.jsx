@@ -27,6 +27,7 @@ class Mainpage extends Component {
     };
 
     submit = async (e) => {
+        e.preventDefault();
         const no = this.state.lineNumber;
         const data = await axios.post(`/count-line/${no}`);
         console.log(data.data.data);
@@ -59,6 +60,14 @@ class Mainpage extends Component {
                 {this.state.lines !== null ? (
                     <div>
                         <h2>Node Js Application </h2>
+                        <form onSubmit={this.submit}>
+                            <h5>
+                                Enter how many number of lines do you want from
+                                last ??
+                            </h5>
+                            <input name="number" onChange={this.changeNumber} />
+                            <button>Submit</button>
+                        </form>
                         {this.state.lines.map((p, i) => (
                             <div>
                                 <h6>{p}</h6>
@@ -81,13 +90,6 @@ class Mainpage extends Component {
                 ) : (
                     <div>Loading</div>
                 )}
-                <form onSubmit={this.submit}>
-                    <h5>
-                        Enter how many number of lines do you want from last ??
-                    </h5>
-                    <input name="number" onChange={this.changeNumber} />
-                    <button>Submit</button>
-                </form>
 
                 {/* <form onSubmit={this.newdataSubmit}>
                     <h4>chane data</h4>
